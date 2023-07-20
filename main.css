@@ -1,0 +1,18 @@
+#app {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+}
+
+.container
+
+.card {
+  display: flex;
+  flex-basis: 33%;
+  font-family:"Audiowide", sans-serif;
+  text-align: center;
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 26px;
+  box-shadow: 35px 35px 68px 0px rgba(145, 192, 255, 0.5), inset -4px -4px 16px 0px rgba(145, 192, 255, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
+}
