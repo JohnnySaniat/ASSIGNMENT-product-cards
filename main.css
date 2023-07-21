@@ -9,10 +9,58 @@
 .card {
   display: flex;
   flex-basis: 33%;
-  font-family:"Audiowide", sans-serif;
+  font-family: 'Patua One', cursive;
   text-align: center;
-  backdrop-filter: blur(3px);
-  background-color: rgba(255, 255, 255, 1);
-  border-radius: 26px;
-  box-shadow: 35px 35px 68px 0px rgba(145, 192, 255, 0.5), inset -4px -4px 16px 0px rgba(145, 192, 255, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  background: #f6f6f6;
+  -webkit-box-shadow: 29px 29px 24px #626262, -29px -29px 24px #ffffff;
+  box-shadow: 29px 29px 24px #626262, -29px -29px 24px #ffffff;
+  color: #000000;
+  -webkit-text-stroke-color: #FC2645;
+  border-style: solid;
+  border-width: 10px;
+  border-color: rgb(200, 225, 233);
+  scale: 80%;
+
+}
+
+img{
+  border-top: 2px;
+  border-color: rgb(200, 225, 233);
+
+}
+
+div.card-body {
+  padding: 0px;
+}
+
+#title {
+  border-color: rgb(200, 225, 233);
+}
+
+#description {
+  text-align: justify;
+}
+
+#specifications {
+  font-weight: bold;
+}
+
+#specifications {
+  font-weight: bold;
+}
+
+.available {
+  color: rgb(197, 197, 37);
+  text-align: left;
+  padding-left: 10px;
+  background-color: #696666;
+  min width: 100px
+}
+
+h2 {
+  border-bottom: 4px;
+  border-color: rgb(200, 225, 233);
+  font-size: 29px;
 }

@@ -3,7 +3,8 @@ const items = [
     id: 1,
     name: "AMETHYST Base 65 Keyboard",
     availability: "Available",
-    size: "Our signature 65% keyboard",
+    description: "Our signature 65% keyboard (dedicated arrow keys) with ABS keycaps. Features hot-swappable switches, aluminum plate, and silicone dampening foam. ",
+    size: "65% COMPACT FORM FACTOR (includes arrow keys",
     weight: "1000g",
     whiteFlame: "White Flame Switches: $120.00",
     titanHeart: "Titan Heart Switches: $135.00",
@@ -12,9 +13,10 @@ const items = [
   },
   {
     id: 2,
-    name: "AMETHYST Base 65 Keyboard",
+    name: "OPAL Base 65 Keyboard",
     availability: "Available",
-    size: "Our signature 65% keyboard",
+    description: "Our signature 65% keyboard (dedicated arrow keys) with dye-sub PBT keycaps. Features hot-swappable switches, aluminum plate, and silicone dampening foam",
+    size: "65% COMPACT FORM FACTOR (includes arrow keys)",
     weight: "1000g",
     whiteFlame: "White Flame Switches: $120.00",
     titanHeart: "Titan Heart Switches: $135.00",
@@ -23,9 +25,10 @@ const items = [
   },
   {
     id: 3,
-    name: "AMETHYST Base 65 Keyboard",
+    name: "Gundam Base 65 Keyboard - Admiral (White)",
     availability: "Available",
-    size: "Our signature 65% keyboard",
+    description: "Our signature 65% keyboard (dedicated arrow keys) with dye-sub PBT keycaps. Features hot-swappable switches, aluminum plate, and silicone dampening foam",
+    size: "65% COMPACT FORM FACTOR (includes arrow keys)",
     weight: "1000g",
     whiteFlame: "White Flame Switches: $120.00",
     titanHeart: "Titan Heart Switches: $135.00",
@@ -34,9 +37,10 @@ const items = [
   },
   {
     id: 4,
-    name: "AMETHYST Base 65 Keyboard",
+    name: "SF x HG Base 65 - Akuma (Monochrome)",
     availability: "Available",
-    size: "Our signature 65% keyboard",
+    description: "Our signature 65% keyboard (dedicated arrow keys) with dye-sub PBT keycaps. Features hot-swappable switches, aluminum plate, and silicone dampening foam",
+    size: "65% COMPACT FORM FACTOR (includes arrow keys)",
     weight: "1000g",
     whiteFlame: "White Flame Switches: $120.00",
     titanHeart: "Titan Heart Switches: $135.00",
@@ -45,9 +49,10 @@ const items = [
   },
   {
     id: 5,
-    name: "AMETHYST Base 65 Keyboard",
+    name: "100T x HG Base 65 Keyboard - Onyx",
     availability: "Available",
-    size: "Our signature 65% keyboard",
+    description: "Our signature 65% keyboard (dedicated arrow keys) with dye-sub PBT keycaps. Features hot-swappable switches, aluminum plate, and silicone dampening foam",
+    size: "65% COMPACT FORM FACTOR (includes arrow keys)",
     weight: "1000g",
     whiteFlame: "White Flame Switches: $120.00",
     titanHeart: "Titan Heart Switches: $135.00",
@@ -56,9 +61,10 @@ const items = [
   },
   {
     id: 6,
-    name: "AMETHYST Base 65 Keyboard",
+    name: "100T x HG Base 65 Keyboard - Cartograph",
     availability: "Available",
-    size: "Our signature 65% keyboard",
+    description: "Our signature 65% keyboard (dedicated arrow keys) with dye-sub PBT keycaps. Features hot-swappable switches, aluminum plate, and silicone dampening foam",
+    size: "65% COMPACT FORM FACTOR (includes arrow keys)",
     weight: "1000g",
     whiteFlame: "White Flame Switches: $120.00",
     titanHeart: "Titan Heart Switches: $135.00",
@@ -88,7 +94,9 @@ const cardsOnDom = (array) => {
     <section class="sections">
       <div class="card-body">
         <img src="${item.imageUrl}" class="card-img-top" alt="${item.name}>"
-        <p class="description"> ${item.availability}</p>
+        <p class="description"> ${item.description}</p>
+        <br>
+        <p class="available"> ${item.availability}</p>
       </div>
     </section>
 
@@ -96,8 +104,8 @@ const cardsOnDom = (array) => {
       <header>
       <h5>Specifications</h5>
       </header>
-      <p class ="specifications"> Size: ${item.size} </p>
-      <p class ="specifications"> Size: ${item.weight} </p>
+      <p class ="specifications">  ${item.size} </p>
+      <p class ="specifications"> Weight: ${item.weight} </p>
       <footer>
         <p class="valid"> Specifications are valid until until 7/30/2023</p>
       </footer>
