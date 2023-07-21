@@ -88,7 +88,7 @@ const cardsOnDom = (array) => {
     <div class="container">
     <div class="card" style="width: 18rem;">
     <header id ="title">
-    <h2>${item.name}</h2>
+    <h2 class="border">${item.name}</h2>
     </header>
 
     <section class="sections">
