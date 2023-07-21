@@ -1,18 +1,43 @@
-#app {
-  display: flex;
-  justify-content: space-evenly;
-  margin: auto;
+html {
+  height: fit-content;
+  scale: 50%;
+  justify-content: space-between;
 }
 
-.container
+body {
+  height: 900px;
+  width: fit-content;
+  margin: auto;
+  justify-content: space-between;
+}
+
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0rem;
+  justify-content: space-around;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: #FC2645;
+}
 
 .card {
   display: flex;
-  flex-basis: 33%;
+  flex-wrap: wrap;
+  margin:0%;
+  padding: 0px;
+  flex-basis: 100%;
+  border-radius: 0%;
+  border: 1px solid;
   font-family: 'Patua One', cursive;
   text-align: center;
   -webkit-border-radius: 0px;
   border-radius: 0px;
+  font-size: 30px;
   background: #f6f6f6;
   -webkit-box-shadow: 29px 29px 24px #626262, -29px -29px 24px #ffffff;
   box-shadow: 29px 29px 24px #626262, -29px -29px 24px #ffffff;
@@ -21,8 +46,16 @@
   border-style: solid;
   border-width: 10px;
   border-color: rgb(200, 225, 233);
-  scale: 80%;
+}
 
+div.container {
+  margin: 0;
+  padding: 0;
+  flex-basis: 32%;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+  height:100%
 }
 
 img{
@@ -62,5 +95,5 @@ div.card-body {
 h2 {
   border-bottom: 4px;
   border-color: rgb(200, 225, 233);
-  font-size: 29px;
+  font-size: 59px;
 }
