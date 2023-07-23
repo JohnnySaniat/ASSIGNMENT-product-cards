@@ -4,7 +4,7 @@ const items = [
     name: "AMETHYST Base 65 Keyboard",
     availability: "Available",
     description: "Our signature 65% keyboard (dedicated arrow keys) with ABS keycaps. Features hot-swappable switches, aluminum plate, and silicone dampening foam. ",
-    size: "65% COMPACT FORM FACTOR (includes arrow keys",
+    size: "65% COMPACT FORM FACTOR (includes arrow keys)",
     weight: "1000g",
     whiteFlame: "White Flame Switches: $120.00",
     titanHeart: "Titan Heart Switches: $135.00",
@@ -88,7 +88,7 @@ const cardsOnDom = (array) => {
     <div class="container">
     <div class="card" style="width: 18rem;">
     <header id ="title">
-    <h2 class="border">${item.name}</h2>
+    <h2 class="border" id="cardName">${item.name}</h2>
     </header>
 
     <section class="sections">
@@ -100,12 +100,13 @@ const cardsOnDom = (array) => {
       </div>
     </section>
 
+  <section class="card-body">
     <section class="sections">
       <header>
       <h5>Specifications</h5>
       </header>
-      <p class ="specifications">  ${item.size} </p>
-      <p class ="specifications"> Weight: ${item.weight} </p>
+      <p class ="size"> Size: ${item.size} </p>
+      <p class ="weight"> Weight: ${item.weight} </p>
       <footer>
         <p class="valid"> Specifications are valid until until 7/30/2023</p>
       </footer>
@@ -115,10 +116,12 @@ const cardsOnDom = (array) => {
       <header>
       <h5>Pricing</h5>
       </header>
-      <p class="price">${item.whiteFlame}</p>
-      <p class="price">${item.titanHeart}</p>
-      <p class="price">${item.geoLinear}</p>
+      <p class="whiteFlame">${item.whiteFlame}</p>
+      <p class="titanHeart">${item.titanHeart}</p>
+      <p class="geoLinear">${item.geoLinear}</p>
       </section>
+    </section>
+    <button type="button" id="delete-btn-card--${item.id}">Delete</button>
    </div>
    </div>`
   }
@@ -128,3 +131,129 @@ const cardsOnDom = (array) => {
 };
 
 cardsOnDom(items);
+
+const keyboardForm = () => {
+  let domString = "";
+
+  domString +=`
+  <div class="form-row align-items-center">
+    <div class="col-auto">
+      <label class="sr-only" for="id">ID</label>
+      <input type="text" class="form-control mb-2" id="id" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+      <label class="sr-only" for="name">Name</label>
+      <input type="text" class="form-control mb-2" id="name" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+      <label class="sr-only" for="availability">Availability</label>
+      <input type="text" class="form-control mb-2" id="availability" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+      <label class="sr-only" for="description">Description</label>
+      <input type="text" class="form-control mb-2" id="description" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+      <label class="sr-only" for="weight">Weight</label>
+      <input type="text" class="form-control mb-2" id="weight" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+      <label class="sr-only" for="size">Size</label>
+      <input type="text" class="form-control mb-2" id="size" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+      <label class="sr-only" for="whiteFlame">Price with White Flame Switches</label>
+      <input type="text" class="form-control mb-2" id="whiteFlame" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+      <label class="sr-only" for="titanHeart">Price with Titan Heart Flame Switches</label>
+      <input type="text" class="form-control mb-2" id="titanHeart" placeholder="Jane Doe">
+    <div class="col-auto">
+      <label class="sr-only" for="geoLinear">Price with Geo Linear Switches</label>
+      <input type="text" class="form-control mb-2" id="geoLinear" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+      <label class="sr-only" for="imageUrl">Image Url</label>
+      <input type="text" class="form-control mb-2" id="imageUrl" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    </div>
+  </div>`
+
+renderToDom("#card-container", domString)
+};
+
+const formButton = document.querySelector("#show-form-button");
+
+formButton.addEventListener("click", (e) => {
+  keyboardForm();
+})
+
+const form = document.querySelector("form");
+
+const createItem = (e) => {
+  e.preventDefault();
+
+  const itemObj = {
+    id: items.length + 1,
+    name: document.querySelector("#name").value, 
+    availability: document.querySelector("#availability").value, 
+    description: document.querySelector("#description").value, 
+    size: document.querySelector("#size").value, 
+    weight: document.querySelector("#weight").value, 
+    whiteFlame: document.querySelector("#whiteFlame").value,
+    titanHeart: document.querySelector("#titanHeart").value,
+    geoLinear: document.querySelector("#geoLinear").value,
+    imageUrl: document.querySelector("#imageUrl").value,
+}
+
+console.log(itemObj);
+items.push(itemObj);
+cardsOnDom(items);
+form.reset();
+};
+
+form.addEventListener("submit", createItem);
+
+const app = document.querySelector("#app");
+
+app.addEventListener("click", (e) => {
+ if (e.target.id.includes("delete-btn-pet")) {
+   const [, id] = e.target.id.split("--");
+   const index = items.findIndex((item) => pet.id === Number (id));
+   items.splice(index, 1);
+   cardsOnDom(items);
+ }
+
+ cardsOnDom(items);
+});
+
+const eventListeners = () => {
+
+  formButton.addEventListener("click", (e) => {
+    keyboardForm();
+  })
+
+  form.addEventListener("submit", createItem);
+
+  app.addEventListener("click", (e) => {
+    if (e.target.id.includes("delete-btn-card")) {
+      const [, id] = e.target.id.split("--");
+      const index = items.findIndex((item) => item.id === Number (id));
+      items.splice(index, 1);
+      cardsOnDom(items);
+    }
+   
+    cardsOnDom(items);
+   });
+}
+
+  const startApp = () => {
+    cardsOnDom(items);
+    eventListeners();
+  }
+
+  startApp();

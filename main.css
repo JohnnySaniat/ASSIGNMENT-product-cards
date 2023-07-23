@@ -28,7 +28,7 @@ html {
   background: #f6f6f6;
   -webkit-box-shadow: 29px 29px 24px #626262, -29px -29px 24px #ffffff;
   box-shadow: 29px 29px 24px #626262, -29px -29px 24px #ffffff;
-  color: #000000;
+  color: black;
   -webkit-text-stroke-color: #FC2645;
   border-style: solid;
   border-width: 10px;
@@ -39,12 +39,6 @@ html {
 
 .card-body {
   padding: 0;
-}
-
-img{
-  border-top: 2px;
-  border-color: rgb(200, 225, 233);
-
 }
 
 div.card-body {
@@ -72,7 +66,7 @@ div.card-body {
 }
 
 h2 {
-  border: 4px;
+  border: .001px;
   border-color: rgb(200, 225, 233);
   font-size: 40px;
   height: 150px;
@@ -91,10 +85,23 @@ h2 {
 
 div.container {
   margin: 0;
-  padding: 0px;
   flex-basis: 32%;
   justify-content: space-between;
-  padding: 20px;
+  padding: 5px;
   width: 300px;
   height:900px;
+}
+
+.card-body {
+  background: linear-gradient(-45deg, #c252ee, #a33ce7, #c78df7);
+}
+
+button#show-form-button {
+  margin-top: 30px;
+  font-size: 20px;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  -ms-flex-align: center;
+  
 }
